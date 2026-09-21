@@ -329,10 +329,13 @@ body {
   align-items: center;
   margin: 20px auto 56px;
   max-width: 920px;
+  position: relative;
+  z-index: 3;
 }
 
 .halo {
   position: relative;
+  z-index: 1;
   width: min(100%, 380px);
   aspect-ratio: 1;
   margin: 0 auto;
@@ -381,6 +384,8 @@ body {
 }
 
 .dedication {
+  position: relative;
+  z-index: 2;
   font-family: "Great Vibes", cursive;
   font-size: clamp(28px, 4vw, 40px);
   line-height: 1.25;
@@ -390,27 +395,41 @@ body {
 .dedication p:last-of-type { color: var(--gold); }
 
 .letter-btn {
-  margin-top: 28px;
+  position: fixed;
+  left: 16px;
+  bottom: 16px;
+  z-index: 12;
+  margin: 0;
   display: flex;
   align-items: center;
   gap: 14px;
-  width: min(100%, 340px);
+  width: auto;
+  max-width: min(340px, calc(100vw - 200px));
   border: 0;
   cursor: pointer;
   text-align: left;
-  color: #fff6d4;
-  background: rgba(28, 16, 8, 0.42);
+  color: #3a2a12;
+  background: linear-gradient(180deg, #ffe08a, #e2b24a);
   padding: 10px 16px 10px 10px;
-  border-radius: 18px;
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.28);
-  backdrop-filter: blur(6px);
-  font-family: inherit;
+  border-radius: 999px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+  font-family: "Outfit", system-ui, sans-serif;
+  animation: letterPulse 2.2s ease-in-out infinite;
+}
+
+.letter-btn[hidden] {
+  display: none !important;
 }
 
 .letter-btn:hover,
 .letter-btn:focus-visible {
   transform: translateY(-2px);
-  outline: 2px solid rgba(240, 193, 75, 0.55);
+  outline: 2px solid rgba(255, 241, 196, 0.8);
+}
+
+@keyframes letterPulse {
+  0%, 100% { box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35); }
+  50% { box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35), 0 0 0 8px rgba(255, 224, 138, 0.28); }
 }
 
 .letter-btn-copy {
@@ -429,7 +448,7 @@ body {
   font-size: 11px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: #f0d9a0;
+  color: #6a4a16;
 }
 
 .envelope {
@@ -590,6 +609,7 @@ body.letter-open .grain,
 body.letter-open .vignette,
 body.letter-open #garden,
 body.letter-open #player-dock,
+body.letter-open .letter-btn,
 body.letter-open #sky {
   visibility: hidden;
 }
@@ -707,7 +727,11 @@ body.letter-open #sky {
   }
   .halo { width: min(86vw, 340px); }
   .dedication { padding: 0 12px; }
-  .letter-btn { margin-left: auto; margin-right: auto; }
+  .letter-btn {
+    left: 12px;
+    max-width: calc(100vw - 24px);
+    bottom: 72px;
+  }
   .letter-sheet { padding: 28px 18px 30px; }
   .gate-title { font-size: 88px; }
 }

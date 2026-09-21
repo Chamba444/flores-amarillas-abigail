@@ -172,6 +172,9 @@
   const musicBtn = document.getElementById("music-btn");
   const help = document.getElementById("music-help");
   const song = document.getElementById("song");
+  const letterBtn = document.getElementById("letter-btn");
+  const letterModal = document.getElementById("letter-modal");
+  const letterClose = document.getElementById("letter-close");
   let started = false;
 
   function showHelp() {
@@ -181,6 +184,7 @@
 
   function playSong() {
     dock.hidden = false;
+    letterBtn.hidden = false;
     song.volume = 0.85;
     const play = song.play();
     if (play && typeof play.then === "function") {
@@ -212,15 +216,12 @@
       gate.hidden = true;
       garden.hidden = false;
       garden.classList.add("show");
+      letterBtn.hidden = false;
       garden.scrollIntoView({ behavior: "instant", block: "start" });
     }, 720);
   }
 
   openBtn.addEventListener("click", openGarden);
-
-  const letterBtn = document.getElementById("letter-btn");
-  const letterModal = document.getElementById("letter-modal");
-  const letterClose = document.getElementById("letter-close");
 
   function openLetter() {
     letterModal.hidden = false;

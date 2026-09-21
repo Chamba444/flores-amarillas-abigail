@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,700&family=Great+Vibes&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=carta3" />
 </head>
 <body>
   <canvas id="sky"></canvas>
@@ -44,17 +44,6 @@
       <aside class="dedication">
         <p>con todo el cariño del mundo,</p>
         <p>tus amigos que tanto te quieren</p>
-        <button id="letter-btn" type="button" class="letter-btn">
-          <span class="envelope" aria-hidden="true">
-            <span class="envelope-body"></span>
-            <span class="envelope-flap"></span>
-            <span class="wax">A</span>
-          </span>
-          <span class="letter-btn-copy">
-            <strong>Hay una carta para ti</strong>
-            <em>tócala y ábrela</em>
-          </span>
-        </button>
       </aside>
     </div>
 
@@ -78,6 +67,18 @@
     </button>
     <p id="music-help" hidden>Toca el botón dorado para encender la música.</p>
   </div>
+
+  <button id="letter-btn" type="button" class="letter-btn" hidden>
+    <span class="envelope" aria-hidden="true">
+      <span class="envelope-body"></span>
+      <span class="envelope-flap"></span>
+      <span class="wax">A</span>
+    </span>
+    <span class="letter-btn-copy">
+      <strong>Hay una carta para ti</strong>
+      <em>tócala y ábrela</em>
+    </span>
+  </button>
 
   <div id="letter-modal" hidden>
     <div class="letter-backdrop" data-close-letter></div>
@@ -107,6 +108,6 @@
     </article>
   </div>
 
-  <script src="app.js"></script>
+  <script src="app.js?v=carta3"></script>
 </body>
 </html>

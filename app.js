@@ -172,7 +172,6 @@
   const musicBtn = document.getElementById("music-btn");
   const help = document.getElementById("music-help");
   const song = document.getElementById("song");
-  const songFile = document.getElementById("song-file");
   let started = false;
 
   function showHelp() {
@@ -202,14 +201,6 @@
     }
     song.pause();
     musicBtn.classList.add("paused");
-  });
-
-  songFile.addEventListener("change", () => {
-    const file = songFile.files && songFile.files[0];
-    if (!file) return;
-    song.src = URL.createObjectURL(file);
-    song.load();
-    playSong();
   });
 
   function openGarden() {

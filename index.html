@@ -44,6 +44,17 @@
       <aside class="dedication">
         <p>con todo el cariño del mundo,</p>
         <p>tus amigos que tanto te quieren</p>
+        <button id="letter-btn" type="button" class="letter-btn">
+          <span class="envelope" aria-hidden="true">
+            <span class="envelope-body"></span>
+            <span class="envelope-flap"></span>
+            <span class="wax">A</span>
+          </span>
+          <span class="letter-btn-copy">
+            <strong>Hay una carta para ti</strong>
+            <em>tócala y ábrela</em>
+          </span>
+        </button>
       </aside>
     </div>
 
@@ -66,6 +77,34 @@
       <span>Diego Nava · Beautiful Dream</span>
     </button>
     <p id="music-help" hidden>Toca el botón dorado para encender la música.</p>
+  </div>
+
+  <div id="letter-modal" hidden>
+    <div class="letter-backdrop" data-close-letter></div>
+    <article class="letter-sheet" role="dialog" aria-modal="true" aria-labelledby="letter-title">
+      <button id="letter-close" type="button" class="letter-close" aria-label="Cerrar la carta">×</button>
+      <p class="letter-mark">para Abigail</p>
+      <h3 id="letter-title">Una carta, sin tonterías</h3>
+      <p class="letter-lead">Ahora sí, sin dejarnos de tonterías. Abigail, esperamos q te guste este detalle de tus amigos. Gracias por ser nuestra amiga y disfruta de este regalito virtual.</p>
+      <ul class="letter-notes">
+        <li>
+          <p>Gracias por no rendirte.</p>
+          <cite>att. Joel Alvarez</cite>
+        </li>
+        <li>
+          <p>Gracias por tu escucha, por las risas compartidas y por ser una amiga tan increíble en todo momento.</p>
+          <cite>att. John Medina</cite>
+        </li>
+        <li>
+          <p>Tu amistad es de esas cosas que uno aprende a valorar con el tiempo.</p>
+          <cite>att. Jim Jaramillo</cite>
+        </li>
+        <li>
+          <p>Te convertiste en una amiga la cual no se puede reemplazar, gracias por tu amistad y espero q podamos seguir siendo amigos más tiempo. C le quiere mucho, señorita.</p>
+          <cite>att. Dennys Chamba</cite>
+        </li>
+      </ul>
+    </article>
   </div>
 
   <script src="app.js"></script>

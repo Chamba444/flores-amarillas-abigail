@@ -217,4 +217,29 @@
   }
 
   openBtn.addEventListener("click", openGarden);
+
+  const letterBtn = document.getElementById("letter-btn");
+  const letterModal = document.getElementById("letter-modal");
+  const letterClose = document.getElementById("letter-close");
+
+  function openLetter() {
+    letterModal.hidden = false;
+    document.body.classList.add("letter-open");
+    letterClose.focus();
+  }
+
+  function closeLetter() {
+    letterModal.hidden = true;
+    document.body.classList.remove("letter-open");
+    letterBtn.focus();
+  }
+
+  letterBtn.addEventListener("click", openLetter);
+  letterClose.addEventListener("click", closeLetter);
+  letterModal.addEventListener("click", (event) => {
+    if (event.target.closest("[data-close-letter]")) closeLetter();
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && !letterModal.hidden) closeLetter();
+  });
 })();

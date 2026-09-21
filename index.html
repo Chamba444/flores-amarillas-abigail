@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Para Abigail · Flores amarillas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,700&family=Great+Vibes&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <canvas id="sky"></canvas>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="vignette" aria-hidden="true"></div>
+
+  <section id="gate">
+    <p class="seal">21 · 09 · un ramo digital</p>
+    <button id="open-btn" type="button" aria-label="Abrir el ramo">
+      <span class="bloom" id="hero-bloom"></span>
+      <span class="open-hint">Toca el girasol</span>
+    </button>
+    <p class="gate-kicker">Para la más especial del laboratorio</p>
+    <h1 class="gate-title">Abigail</h1>
+    <p class="gate-sub">Hoy no hay disculpas. Hay flores.</p>
+  </section>
+
+  <main id="garden" hidden>
+    <header class="hero">
+      <p class="eyebrow">Feliz día de las flores amarillas</p>
+      <h2>Un jardín para <em>Abigail</em></h2>
+      <p class="lede">Conspiración oficial de amigos que sí se acordaron.</p>
+    </header>
+
+    <div class="stage">
+      <div class="halo">
+        <div class="orbit" id="orbit"></div>
+        <figure class="portrait">
+          <img src="img/abigail.jpg" alt="Abigail" />
+          <figcaption>nuestra estrella</figcaption>
+        </figure>
+      </div>
+
+      <aside class="dedication">
+        <p>con todo el cariño del mundo,</p>
+        <p>tus amigos que tanto te quieren</p>
+      </aside>
+    </div>
+
+    <section class="board" id="board" aria-label="Mensajes de tus amigos"></section>
+
+    <footer class="finale">
+      <div class="ribbon">hecho con malicia y cariño</div>
+      <p class="stamp">Y recuerda: la vida es dura,<br /><strong>pero más dura es la apanadura</strong></p>
+    </footer>
+  </main>
+
+  <audio id="song" loop preload="auto">
+    <source src="audio/que-ganas.mp3" type="audio/mpeg" />
+  </audio>
+
+  <div id="player-dock" hidden>
+    <button id="music-btn" type="button">
+      <span class="eq" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span>Morat · ¿Qué ganas?</span>
+    </button>
+    <p id="music-help" hidden>
+      Copia tu archivo a
+      <code>audio/que-ganas.mp3</code>
+      o
+      <label class="pick">elígela desde tu PC<input id="song-file" type="file" accept="audio/*" /></label>
+    </p>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
